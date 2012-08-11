@@ -1,35 +1,24 @@
 ﻿namespace EventbriteNET.Model
 {
     using System;
-    using System.Collections.Generic;
-    using HttpApi;
+    using Newtonsoft.Json;
 
-    public class Event
+    public class Event : ModelWithId
     {
-        public DateTime Created;
-        public string Description;
-        public DateTime EndDateTime;
-        public long Id;
-        public DateTime Modified;
-        public DateTime StartDateTime;
+        [JsonProperty("created")]
+        public DateTime Created { get; set; }
 
-        public Dictionary<long, Ticket> Tickets = new Dictionary<long, Ticket>();
-        public string Title;
+        [JsonProperty("description")]
+        public string Description { get; set; }
 
-        private List<Attendee> attendees;
+        [JsonProperty("end_date")]
+        public DateTime EndDateTime { get; set; }
 
-/*
-        public List<Attendee> Attendees
-        {
-            get
-            {
-                if (attendees == null)
-                {
-                    attendees = new List<Attendee>();
-                    attendees.AddRange(new EventAttendeesRequest(Id, Context).GetResponse());
-                }
-                return attendees;
-            }
-        }*/
+        public DateTime Modified { get; set; }
+
+        [JsonProperty("start_date")]
+        public DateTime StartDateTime { get; set; }
+
+        public string Title { get; set; }
     }
 }

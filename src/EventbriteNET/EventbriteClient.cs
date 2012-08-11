@@ -5,19 +5,20 @@
     using System.Net;
     using Exceptions;
     using HttpApi;
+    using Json;
     using Model;
     using RestSharp;
     using RestSharp.Deserializers;
     using RestSharp.Extensions;
     using Utils;
 
-    public abstract partial class EventbriteClient
+    public partial class EventbriteClient
     {
         private const string BaseUrl = "https://www.eventbrite.com/json/";
 
         protected readonly IRestClient Client;
 
-        protected EventbriteClient(EventbriteConfig config)
+        public EventbriteClient(EventbriteConfig config)
             : this(new RestClient(BaseUrl)
                 {
                     Authenticator =
@@ -26,7 +27,7 @@
         {
         }
 
-        protected internal EventbriteClient(IRestClient restClient)
+        public EventbriteClient(IRestClient restClient)
         {
             Guard.NotNull("restClient", restClient);
             Client = restClient;
@@ -49,7 +50,10 @@
             get { return new EventbriteRequest(RequestOptions); }
         }
 
-        protected abstract EventbriteOptions RequestOptions { get; }
+        protected virtual EventbriteOptions RequestOptions
+        {
+            get { throw new NotImplementedException(); }
+        }
 
         protected TModel ExecuteRequest<TModel>(IRestRequest request,
                                                 HttpStatusCode expectedStatusCode = HttpStatusCode.OK)
@@ -160,7 +164,7 @@
         private bool TryDeserialize<T>(IRestRequest request, IRestResponse raw, out IRestResponse<T> restResponse)
         {
             request.OnBeforeDeserialization(raw);
-            IDeserializer handler = new JsonDeserializer();
+            IDeserializer handler = new JsonNetDeserializer();
             handler.RootElement = request.RootElement;
             handler.DateFormat = request.DateFormat;
             handler.Namespace = request.XmlNamespace;

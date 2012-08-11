@@ -115,6 +115,15 @@ namespace EventbriteNET.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Limit the number of events returned from 1 to 100 events per page. Your value - {0}..
+        /// </summary>
+        public static string event_search_max_validation {
+            get {
+                return ResourceManager.GetString("event_search_max_validation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
         public static string IsNotTrue {

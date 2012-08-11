@@ -135,6 +135,9 @@
   <data name="ArgumentTooSmallError" xml:space="preserve">
     <value />
   </data>
+  <data name="event_search_max_validation" xml:space="preserve">
+    <value>Limit the number of events returned from 1 to 100 events per page. Your value - {0}.</value>
+  </data>
   <data name="IsNotTrue" xml:space="preserve">
     <value />
   </data>

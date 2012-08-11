@@ -1,6 +1,6 @@
 namespace EventbriteNET.HttpApi
 {
-    using System.Collections.Generic;
+    using RequestParameters;
     using RestSharp;
 
     public class EventbriteRequest
@@ -12,7 +12,7 @@ namespace EventbriteNET.HttpApi
             _options = options;
         }
 
-        public IRestRequest Get(string resource, params Parameter[] parameters)
+        public IRestRequest Get(string resource, RequestParametersBase parameters = null)
         {
             var request = CreateRequest(resource, parameters);
             request.Method = Method.GET;
@@ -20,7 +20,7 @@ namespace EventbriteNET.HttpApi
             return request;
         }
 
-        public IRestRequest Post(string resource, params Parameter[] parameters)
+        public IRestRequest Post(string resource, RequestParametersBase parameters = null)
         {
             var request = CreateRequest(resource, parameters);
             request.Method = Method.POST;
@@ -28,7 +28,7 @@ namespace EventbriteNET.HttpApi
             return request;
         }
 
-        public IRestRequest Delete(string resource, params Parameter[] parameters)
+        public IRestRequest Delete(string resource, RequestParametersBase parameters = null)
         {
             var request = CreateRequest(resource, parameters);
             request.Method = Method.DELETE;
@@ -36,7 +36,7 @@ namespace EventbriteNET.HttpApi
             return request;
         }
 
-        public IRestRequest Put(string resource, params Parameter[] parameters)
+        public IRestRequest Put(string resource, RequestParametersBase parameters = null)
         {
             var request = CreateRequest(resource, parameters);
             request.Method = Method.PUT;
@@ -44,16 +44,22 @@ namespace EventbriteNET.HttpApi
             return request;
         }
 
-        private IRestRequest CreateRequest(string resource, IEnumerable<Parameter> parameters)
+        private IRestRequest CreateRequest(string resource, RequestParametersBase parameters)
         {
             var request = new RestRequest();
             if (parameters != null)
             {
-                request.Parameters.AddRange(parameters);
+                parameters.Validate();
+
+                foreach (var param in parameters.ToDictionary())
+                {
+                    request.AddParameter(param.Key, param.Value);
+                }
             }
 
-            request.DateFormat = "yyyy-MM-dd";
+            request.DateFormat = _options.DateFormat ?? "yyyy-MM-dd HH:mm:ss";
             request.Resource = resource;
+            request.RootElement = _options.RootElement ?? string.Empty;
             request.RequestFormat = DataFormat.Json;
 
             return request;

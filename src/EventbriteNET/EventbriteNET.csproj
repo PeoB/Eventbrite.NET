@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.8\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="RestSharp">
       <HintPath>..\packages\RestSharp.103.4\lib\net4\RestSharp.dll</HintPath>
     </Reference>
@@ -52,7 +55,24 @@
     <Compile Include="Exceptions\EventbriteApiException.cs" />
     <Compile Include="HttpApi\EventbriteOptions.cs" />
     <Compile Include="HttpApi\EventbriteRequest.cs" />
+    <Compile Include="Exceptions\EventbriteInputValidationParameterException.cs" />
+    <Compile Include="HttpApi\RequestParameters\EventSearchRequestParameters.cs" />
+    <Compile Include="HttpApi\RequestParameters\RequestParametersBase.cs" />
+    <Compile Include="Json\JsonCreationConverter.cs" />
+    <Compile Include="Json\JsonNetDeserializer.cs" />
+    <Compile Include="Json\FastJsonDeserializer.cs" />
+    <Compile Include="Json\Formatter.cs" />
+    <Compile Include="Json\Getters.cs" />
+    <Compile Include="Json\JSON.cs" />
+    <Compile Include="Json\JsonParser.cs" />
+    <Compile Include="Json\JsonSerializer.cs" />
+    <Compile Include="Json\Reflection.cs" />
+    <Compile Include="Json\SafeDictionary.cs" />
     <Compile Include="Model\Attendee.cs" />
+    <Compile Include="Model\GenericEvent.cs" />
+    <Compile Include="Model\ModelWithId.cs" />
+    <Compile Include="Model\EventsModel.cs" />
+    <Compile Include="Model\Summary.cs" />
     <Compile Include="Model\Errors.cs" />
     <Compile Include="Model\Event.cs" />
     <Compile Include="Model\Organizer.cs" />
@@ -70,7 +90,6 @@
     <Compile Include="Utils\Guard.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="HttpApi\RequestParameters\" />
     <Folder Include="Model\Utils\" />
   </ItemGroup>
   <ItemGroup>

@@ -1,6 +1,8 @@
 ﻿namespace EventbriteNET
 {
     using HttpApi;
+    using HttpApi.RequestParameters;
+    using Model;
 
     public partial class EventbriteClient
     {
@@ -18,12 +20,12 @@
             {
             }
 
-            /*public User GetCurrentUser()
+            public EventsModel EventSearch(EventSearchRequestParameters parameters)
             {
-                var request = EventbriteRequest.Get("users/me");
-                return ExecuteRequest<User>(request);
+                var request = EventbriteRequest.Get("event_search", parameters);
+                return ExecuteRequest<EventsModel>(request);
             }
-
+            /*
             public User GetUser(UserId userId)
             {
                 Guard.IsTrue("userId", () => userId.ToString().Length>0);
