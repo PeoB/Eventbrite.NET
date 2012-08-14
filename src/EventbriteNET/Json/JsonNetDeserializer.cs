@@ -3,7 +3,6 @@
     using Newtonsoft.Json;
     using RestSharp;
     using RestSharp.Deserializers;
-    using fastJSON;
 
     public class JsonNetDeserializer : IDeserializer
     {
@@ -17,7 +16,6 @@
 
         public T Deserialize<T>(IRestResponse response)
         {
-            var json = JSON.Instance;
             return JsonConvert.DeserializeObject<T>(response.Content);
         }
 

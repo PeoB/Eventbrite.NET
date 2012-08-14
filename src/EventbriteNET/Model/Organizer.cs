@@ -1,35 +1,22 @@
 ﻿namespace EventbriteNET.Model
 {
-    using System.Collections.Generic;
-    using HttpApi;
+    using System;
+    using Json.Converters;
+    using Newtonsoft.Json;
 
-    public class Organizer
+    public class Organizer : ModelWithId
     {
-        private readonly long id;
+        [JsonProperty("url")]
+        [JsonConverter(typeof (UriConverter))]
+        public Uri Url { get; set; }
 
-        private Dictionary<long, Event> events;
+        [JsonProperty("description")]
+        public string Description { get; set; }
 
+        [JsonProperty("long_description")]
+        public string LongDescription { get; set; }
 
-        public long Id
-        {
-            get { return id; }
-        }
-/*
-        public Dictionary<long, Event> Events
-        {
-            get
-            {
-                if (events == null)
-                {
-                    events = new Dictionary<long, Event>();
-                    var eventArray = new OrganizerEventsRequest(Id, Context).GetResponse();
-                    foreach (var eventEntity in eventArray)
-                    {
-                        events.Add(eventEntity.Id, eventEntity);
-                    }
-                }
-                return events;
-            }
-        }*/
+        [JsonProperty("name")]
+        public string Name { get; set; }
     }
 }

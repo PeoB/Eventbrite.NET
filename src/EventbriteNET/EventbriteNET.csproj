@@ -58,16 +58,9 @@
     <Compile Include="Exceptions\EventbriteInputValidationParameterException.cs" />
     <Compile Include="HttpApi\RequestParameters\EventSearchRequestParameters.cs" />
     <Compile Include="HttpApi\RequestParameters\RequestParametersBase.cs" />
+    <Compile Include="Json\Converters\UriConverter.cs" />
     <Compile Include="Json\JsonCreationConverter.cs" />
     <Compile Include="Json\JsonNetDeserializer.cs" />
-    <Compile Include="Json\FastJsonDeserializer.cs" />
-    <Compile Include="Json\Formatter.cs" />
-    <Compile Include="Json\Getters.cs" />
-    <Compile Include="Json\JSON.cs" />
-    <Compile Include="Json\JsonParser.cs" />
-    <Compile Include="Json\JsonSerializer.cs" />
-    <Compile Include="Json\Reflection.cs" />
-    <Compile Include="Json\SafeDictionary.cs" />
     <Compile Include="Model\Attendee.cs" />
     <Compile Include="Model\GenericEvent.cs" />
     <Compile Include="Model\ModelWithId.cs" />
@@ -77,6 +70,7 @@
     <Compile Include="Model\Event.cs" />
     <Compile Include="Model\Organizer.cs" />
     <Compile Include="Model\Ticket.cs" />
+    <Compile Include="Model\Venue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequestParamNames.cs" />
     <Compile Include="Resources\SR.Designer.cs">

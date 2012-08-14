@@ -1,25 +1,48 @@
 ﻿namespace EventbriteNET.Model
 {
     using System;
+    using Newtonsoft.Json;
 
     public enum TicketType
     {
-        FixedPrice,
-        Donation
+        FixedPrice = 0,
+        Donation = 1,
     }
 
-    public class Ticket
+    public class Ticket2
     {
-        public string Currency;
-        public string Description;
-        public DateTime EndDateTime;
-        public long Id;
-        public string Name;
-        public decimal Price;
-        public int? QuantityAvailable;
-        public int? QuantitySold;
-        public DateTime? StartDateTime;
-        public TicketType Type;
+        [JsonProperty("ticket")]
+        public Ticket Ticket { get; set; }
+    }
+
+    public class Ticket : ModelWithId
+    {
+        [JsonProperty("currency")]
+        public string Currency { get; set; }
+
+        [JsonProperty("description")]
+        public string Description { get; set; }
+
+        [JsonProperty("end_date")]
+        public DateTime EndDateTime { get; set; }
+
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        [JsonProperty("price")]
+        public decimal Price { get; set; }
+
+        [JsonProperty("quantity_available")]
+        public int? QuantityAvailable { get; set; }
+
+        [JsonProperty("quantity_sold")]
+        public int? QuantitySold { get; set; }
+
+        [JsonProperty("start_date")]
+        public DateTime? StartDateTime { get; set; }
+
+        [JsonProperty("type")]
+        public TicketType Type { get; set; }
 
     }
 }
