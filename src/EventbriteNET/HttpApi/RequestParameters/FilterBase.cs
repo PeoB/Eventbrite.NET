@@ -3,15 +3,15 @@ namespace EventbriteNET.HttpApi.RequestParameters
     using System;
     using System.Collections.Generic;
 
-    public abstract class RequestParametersBase
+    public abstract class FilterBase
     {
         protected IDictionary<string, KeyValuePair<Func<object>, Action<object>>> Map = new Dictionary<string, KeyValuePair<Func<object>, Action<object>>>();
 
-        protected RequestParametersBase()
+        protected FilterBase()
         {
         }
 
-        protected RequestParametersBase(IEnumerable<KeyValuePair<string, object>> sourceDict) : this()
+        protected FilterBase(IEnumerable<KeyValuePair<string, object>> sourceDict) : this()
         {
             //init object from dictionary
             foreach (var source in sourceDict)

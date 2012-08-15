@@ -56,9 +56,12 @@
     <Compile Include="HttpApi\EventbriteOptions.cs" />
     <Compile Include="HttpApi\EventbriteRequest.cs" />
     <Compile Include="Exceptions\EventbriteInputValidationParameterException.cs" />
-    <Compile Include="HttpApi\RequestParameters\EventSearchRequestParameters.cs" />
-    <Compile Include="HttpApi\RequestParameters\RequestParametersBase.cs" />
+    <Compile Include="HttpApi\RequestParameters\EventSearchFilter.cs" />
+    <Compile Include="HttpApi\RequestParameters\FilterBase.cs" />
+    <Compile Include="Json\Converters\InnerListConverter.cs" />
+    <Compile Include="Json\Converters\IOuterConverter.cs" />
     <Compile Include="Json\Converters\UriConverter.cs" />
+    <Compile Include="Json\ConstructorCreationConverter.cs" />
     <Compile Include="Json\JsonCreationConverter.cs" />
     <Compile Include="Json\JsonNetDeserializer.cs" />
     <Compile Include="Model\Attendee.cs" />

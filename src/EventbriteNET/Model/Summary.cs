@@ -1,5 +1,6 @@
 ﻿namespace EventbriteNET.Model
 {
+    using HttpApi.RequestParameters;
     using Newtonsoft.Json;
 
     public class Summary
@@ -15,5 +16,8 @@
 
         [JsonProperty("num_showing")]
         public long NumShowing { get; set; }
+
+        [JsonProperty("filters")]
+        public EventSearchFilter Filter { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿namespace EventbriteNET.Console
 {
     using System.Collections.Generic;
+    using HttpApi.RequestParameters;
     using Json;
     using Model;
     using RestSharp;
@@ -15,7 +16,7 @@
             var restResponse = new RestResponse() {Content = json};
             var dictionary = new JsonNetDeserializer().Deserialize<EventsModel>(restResponse);
             var config = new EventbriteConfigManager().GetConfig();
-            var events = new EventbriteClient(config).Event.EventSearch(null);
+            var events = new EventbriteClient(config).Event.EventSearch(new EventSearchFilter {Keywords = "donation", Page = 2});
             foreach (var @event in events.Events)
             {
                 System.Console.WriteLine("{0}-{1}", @event.Id, @event.Description);

@@ -4,18 +4,17 @@
     using Exceptions;
     using Resources;
 
-    public class EventSearchRequestParameters : RequestParametersBase
+    public class EventSearchFilter : FilterBase
     {
-        public EventSearchRequestParameters()
+        public EventSearchFilter()
         {
             InitMap();
         }
 
-        public EventSearchRequestParameters(IEnumerable<KeyValuePair<string, object>> sourceDict) : base(sourceDict)
+        public EventSearchFilter(IEnumerable<KeyValuePair<string, object>> sourceDict) : base(sourceDict)
         {
             InitMap();
         }
-
 
         public string Keywords { get; set; }
         public string Organizer { get; set; }

@@ -6,23 +6,23 @@
 
     public partial class EventbriteClient
     {
-        public EveventEventbriteClient Event
+        public EventEventbriteClient Event
         {
-            get { return new EveventEventbriteClient(this); }
+            get { return new EventEventbriteClient(this); }
         }
 
-        #region Nested type: EveventEventbriteClient
+        #region Nested type: EventEventbriteClient
 
-        public class EveventEventbriteClient : EventbriteClient
+        public class EventEventbriteClient : EventbriteClient
         {
-            public EveventEventbriteClient(EventbriteClient client)
+            public EventEventbriteClient(EventbriteClient client)
                 : base(client.Client)
             {
             }
 
-            public EventsModel EventSearch(EventSearchRequestParameters parameters)
+            public EventsModel EventSearch(EventSearchFilter filter = null)
             {
-                var request = EventbriteRequest.Get("event_search", parameters);
+                var request = EventbriteRequest.Get("event_search", filter);
                 return ExecuteRequest<EventsModel>(request);
             }
             /*

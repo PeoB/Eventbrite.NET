@@ -12,46 +12,46 @@ namespace EventbriteNET.HttpApi
             _options = options;
         }
 
-        public IRestRequest Get(string resource, RequestParametersBase parameters = null)
+        public IRestRequest Get(string resource, FilterBase filters = null)
         {
-            var request = CreateRequest(resource, parameters);
+            var request = CreateRequest(resource, filters);
             request.Method = Method.GET;
 
             return request;
         }
 
-        public IRestRequest Post(string resource, RequestParametersBase parameters = null)
+        public IRestRequest Post(string resource, FilterBase filters = null)
         {
-            var request = CreateRequest(resource, parameters);
+            var request = CreateRequest(resource, filters);
             request.Method = Method.POST;
 
             return request;
         }
 
-        public IRestRequest Delete(string resource, RequestParametersBase parameters = null)
+        public IRestRequest Delete(string resource, FilterBase filters = null)
         {
-            var request = CreateRequest(resource, parameters);
+            var request = CreateRequest(resource, filters);
             request.Method = Method.DELETE;
 
             return request;
         }
 
-        public IRestRequest Put(string resource, RequestParametersBase parameters = null)
+        public IRestRequest Put(string resource, FilterBase filters = null)
         {
-            var request = CreateRequest(resource, parameters);
+            var request = CreateRequest(resource, filters);
             request.Method = Method.PUT;
 
             return request;
         }
 
-        private IRestRequest CreateRequest(string resource, RequestParametersBase parameters)
+        private IRestRequest CreateRequest(string resource, FilterBase filters)
         {
             var request = new RestRequest();
-            if (parameters != null)
+            if (filters != null)
             {
-                parameters.Validate();
+                filters.Validate();
 
-                foreach (var param in parameters.ToDictionary())
+                foreach (var param in filters.ToDictionary())
                 {
                     request.AddParameter(param.Key, param.Value);
                 }

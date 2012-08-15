@@ -2,7 +2,6 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using Json.Converters;
     using Newtonsoft.Json;
 
@@ -31,22 +30,10 @@
         [JsonProperty("url")]
         [JsonConverter(typeof (UriConverter))]
         public Uri Url { get; set; }
-
+        
         [JsonProperty("tickets")]
-        public List<Ticket2> AllTickets { get; set; }
-
-        [JsonIgnore]
-        public List<Ticket> Tickets
-        {
-            get
-            {
-                if (AllTickets == null)
-                {
-                    return new List<Ticket>();
-                }
-                return AllTickets.Where(_ => _.Ticket != null).Select(_ => _.Ticket).ToList();
-            }
-        }
+        [JsonConverter(typeof(InnerListConverter<Ticket2, Ticket>))]
+        public List<Ticket> Tickets { get; set; }
 
         [JsonProperty("category")]
         public string Category { get; set; }
@@ -66,5 +53,8 @@
 
         [JsonProperty("venue")]
         public Venue Venue { get; set; }
+
+        [JsonProperty("status")]
+        public string Status { get; set; }
     }
 }

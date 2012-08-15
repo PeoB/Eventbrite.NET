@@ -1,6 +1,7 @@
 ﻿namespace EventbriteNET.Model
 {
     using System;
+    using Json.Converters;
     using Newtonsoft.Json;
 
     public enum TicketType
@@ -9,10 +10,12 @@
         Donation = 1,
     }
 
-    public class Ticket2
+    public class Ticket2 : IOuterConverter<Ticket2, Ticket>
     {
         [JsonProperty("ticket")]
         public Ticket Ticket { get; set; }
+
+        public Func<Ticket2, Ticket> Convert { get { return _ => _.Ticket; } }
     }
 
     public class Ticket : ModelWithId
