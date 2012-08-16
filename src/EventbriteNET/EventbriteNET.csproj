@@ -56,6 +56,7 @@
     <Compile Include="HttpApi\EventbriteOptions.cs" />
     <Compile Include="HttpApi\EventbriteRequest.cs" />
     <Compile Include="Exceptions\EventbriteInputValidationParameterException.cs" />
+    <Compile Include="HttpApi\RequestParameters\GetEventFilter.cs" />
     <Compile Include="HttpApi\RequestParameters\EventSearchFilter.cs" />
     <Compile Include="HttpApi\RequestParameters\FilterBase.cs" />
     <Compile Include="Json\Converters\InnerListConverter.cs" />
@@ -81,6 +82,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SR.resx</DependentUpon>
     </Compile>
+    <Compile Include="Utils\EnumUtil.cs" />
+    <Compile Include="Utils\EnumUtil.TEnum.cs" />
     <Compile Include="Utils\OAuth2EventbriteAuthenticator.cs" />
     <Compile Include="Utils\EventbriteConfig.cs" />
     <Compile Include="Utils\EventbriteConfigManager.cs" />

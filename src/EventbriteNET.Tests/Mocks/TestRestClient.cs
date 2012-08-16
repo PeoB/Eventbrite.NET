@@ -29,9 +29,12 @@
 
         public IRestResponse Execute(IRestRequest request)
         {
-            var response = new RestResponse();
-            response.Request = request;
-            response.Content = _responseContent;
+            var response = new RestResponse
+                {
+                    Request = request,
+                    Content = _responseContent,
+                    ResponseStatus = ResponseStatus.Completed
+                };
 
             return response;
         }

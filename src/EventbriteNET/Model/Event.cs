@@ -5,6 +5,11 @@
     using Json.Converters;
     using Newtonsoft.Json;
 
+    public class Event2
+    {
+        public Event @event { get; set; }
+    }
+
     public class Event : ModelWithId
     {
         [JsonProperty("created")]
@@ -56,5 +61,11 @@
 
         [JsonProperty("status")]
         public string Status { get; set; }
+        
+        [JsonProperty("confirmation_page")]
+        public string ConfirmationPage { get; set; }
+
+        [JsonProperty("confirmation_email")]
+        public string ConfirmationEmail { get; set; }
     }
 }

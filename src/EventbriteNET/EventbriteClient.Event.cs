@@ -25,15 +25,13 @@
                 var request = EventbriteRequest.Get("event_search", filter);
                 return ExecuteRequest<EventsModel>(request);
             }
-            /*
-            public User GetUser(UserId userId)
+
+            public Event GetEvent(GetEventFilter filter)
             {
-                Guard.IsTrue("userId", () => userId.ToString().Length>0);
-
-                var request = EventbriteRequest.Get(string.Format("users/{0}", userId));
-                return ExecuteRequest<User>(request);
+                var request = EventbriteRequest.Get("event_get", filter);
+                return ExecuteRequest<Event2>(request).@event;
             }
-
+            /*
             public List<User> GetUsers()
             {
                 var request = EventbriteRequest.Get("users");

@@ -1,5 +1,6 @@
 ﻿namespace EventbriteNET.Tests
 {
+    using System.Collections.Generic;
     using HttpApi.RequestParameters;
     using NAsana.API.Tests.Mocks;
     using NUnit.Framework;
@@ -18,6 +19,11 @@
                                                                "{\"event\": {\"box_header_text_color\": \"005580\", \"link_color\": \"EE6600\", \"box_background_color\": \"FFFFFF\", \"box_border_color\": \"D5D5D3\", \"timezone\": \"America/Sao_Paulo\", \"organizer\": {\"url\": \"http://www.eventbrite.com/org/2485205510\", \"description\": \"\", \"long_description\": \"\", \"id\": 2485205510, \"name\": \"\"}, \"background_color\": \"FFFFFF\", \"id\": 3812465186, \"category\": \"conferences,conventions\", \"box_header_background_color\": \"EFEFEF\", \"capacity\": 0, \"num_attendee_rows\": 0, \"title\": \"\", \"start_date\": \"2012-08-24 08:00:00\", \"status\": \"Live\", \"description\": \"startup\", \"timezone_offset\": \"GMT-0300\", \"text_color\": \"005580\", \"title_text_color\": \"\", \"tickets\": [{\"ticket\": {\"description\": \"\", \"end_date\": \"2012-08-23 10:00:00\", \"min\": 1, \"max\": 30, \"price\": \"104.09\", \"visible\": \"true\", \"start_date\": \"2012-06-01 08:00:00\", \"currency\": \"BRL\", \"type\": 0, \"id\": 14362722, \"name\": \"Startups\"}}, {\"ticket\": {\"description\": \"\", \"end_date\": \"2012-08-23 10:00:00\", \"min\": 1, \"max\": 30, \"price\": \"206.59\", \"visible\": \"true\", \"start_date\": \"2012-06-01 08:00:00\", \"currency\": \"BRL\", \"type\": 0, \"id\": 14362296, \"name\": \"Empres\\u00e1rios\"}}], \"distance\": \"0.00M\", \"created\": \"2012-06-25 18:23:15\", \"url\": \"http://conferenciacampinastartups-SRCH.eventbrite.com\", \"box_text_color\": \"000000\", \"privacy\": \"Public\", \"modified\": \"2012-07-06 07:05:46\", \"repeats\": \"no\"}}, " +
                                                                "{\"event\": {\"box_header_text_color\": \"005580\", \"link_color\": \"EE6600\", \"box_background_color\": \"FFFFFF\", \"timezone\": \"Europe/Athens\", \"box_border_color\": \"D5D5D3\", \"logo\": \"http://ebmedia.eventbrite.com/s3-build/images/361540/1954445013/1/logo.png\", \"organizer\": {\"url\": \"http://www.eventbrite.com/org/2425202408\", \"description\": \"\", \"long_description\": \"\", \"id\": 2425202408, \"name\": \"NADSME\"}, \"background_color\": \"FFFFFF\", \"id\": 3814400976, \"category\": \"conferences,other\", \"box_header_background_color\": \"EFEFEF\", \"capacity\": 0, \"num_attendee_rows\": 0, \"title\": \"Volos Startup Weekend Oct 2012\", \"start_date\": \"2012-10-12 18:00:00\", \"status\": \"Live\", \"description\": \"startup up, developer, hack, hack, hacker, design, ha\", \"timezone_offset\": \"GMT+0300\", \"text_color\": \"005580\", \"title_text_color\": \"\", \"tickets\": [{\"ticket\": {\"description\": \"This ticket type applies to software engineers/coders/developers - in short, anybody who can and will write code.\", \"end_date\": \"2012-09-12 18:00:00\", \"min\": 1, \"max\": null, \"price\": \"25.00\", \"visible\": \"true\", \"start_date\": \"2010-12-17 01:00:00\", \"currency\": \"EUR\", \"type\": 0, \"id\": 14364948, \"name\": \"Developer (Early Bird)\"}}, {\"ticket\": {\"description\": \"This ticket type applies to anybody with a background in design (graphics, UX/UI, etc.)\", \"end_date\": \"2012-09-12 18:00:00\", \"min\": 1, \"max\": null, \"price\": \"25.00\", \"visible\": \"true\", \"currency\": \"EUR\", \"type\": 0, \"id\": 14364950, \"name\": \"Designer (Early Bird)\"}}, {\"ticket\": {\"description\": \"This ticket type applies to business, marketing & PR, and anyone with a non-technical background.\", \"end_date\": \"2012-09-12 18:00:00\", \"min\": 1, \"max\": null, \"price\": \"25.00\", \"visible\": \"true\", \"currency\": \"EUR\", \"type\": 0, \"id\": 14364952, \"name\": \"Non-Technical (Early Bird)\"}}, {\"ticket\": {\"description\": \"This ticket type applies to software engineers/coders/developers - in short, anybody who can and will write code. Students: use code \\\"STUDENT\\\" and pay just 49\\u20ac. You will be required to show Student ID at the door.\", \"end_date\": \"2012-10-12 17:59:00\", \"min\": 1, \"max\": null, \"price\": \"60.00\", \"visible\": \"false\", \"currency\": \"EUR\", \"type\": 0, \"id\": 14364954, \"name\": \"Developer\"}}, {\"ticket\": {\"description\": \"This ticket type applies to anybody with a background in design (graphics, UX/UI, etc.) Students: user code \\\"STUDENT\\\" and pay just 49\\u20ac. You will be required to show Student ID at the door. \", \"end_date\": \"2012-10-12 17:00:00\", \"min\": 1, \"max\": null, \"price\": \"60.00\", \"visible\": \"false\", \"currency\": \"EUR\", \"type\": 0, \"id\": 14364956, \"name\": \"Designer\"}}, {\"ticket\": {\"description\": \"This ticket type applies to business, marketing & PR, and anyone with a non-technical background. Students: use code \\\"STUDENT\\\" and pay just 49\\u20ac. You will be required to show Student ID at the door.\", \"end_date\": \"2012-10-12 17:59:00\", \"min\": 1, \"max\": null, \"price\": \"60.00\", \"visible\": \"false\", \"currency\": \"EUR\", \"type\": 0, \"id\": 14364958, \"name\": \"Non-Technical\"}}, {\"ticket\": {\"description\": \"\", \"end_date\": \"2012-10-12 17:00:00\", \"min\": 1, \"max\": null, \"price\": \"0.00\", \"visible\": \"false\", \"currency\": \"EUR\", \"type\": 0, \"id\": 14364960, \"name\": \"Mentor\"}}, {\"ticket\": {\"description\": \"\", \"end_date\": \"2012-10-12 17:00:00\", \"min\": 1, \"max\": null, \"price\": \"0.00\", \"visible\": \"false\", \"currency\": \"EUR\", \"type\": 0, \"id\": 14364962, \"name\": \"Speaker\"}}, {\"ticket\": {\"description\": \"\", \"end_date\": \"2012-10-12 17:00:00\", \"min\": 1, \"max\": null, \"price\": \"0.00\", \"visible\": \"false\", \"currency\": \"EUR\", \"type\": 0, \"id\": 14364964, \"name\": \"Sponsor\"}}, {\"ticket\": {\"description\": \"\", \"end_date\": \"2012-10-12 17:00:00\", \"min\": 1, \"max\": null, \"price\": \"0.00\", \"visible\": \"false\", \"currency\": \"EUR\", \"type\": 0, \"id\": 14364966, \"name\": \"Organizer / Special Guest\"}}], \"distance\": \"0.00M\", \"created\": \"2012-06-26 05:00:33\", \"url\": \"http://www.eventbrite.com/event/3814400976/SRCH\", \"box_text_color\": \"000000\", \"privacy\": \"Public\", \"modified\": \"2012-07-24 08:02:21\", \"logo_ssl\": \"https://ebmedia.eventbrite.com/s3-build/images/361540/1954445013/1/logo.png\", \"repeats\": \"no\"}}" +
                                                                "]}";
+
+        private const string get_event = "{\"event\": {\"box_header_text_color\": \"005580\", \"link_color\": \"EE6600\", \"box_background_color\": \"FFFFFF\", \"box_border_color\": \"D5D5D3\", \"timezone\": \"America/Sao_Paulo\", \"organizer\": {\"url\": \"http://www.eventbrite.com/org/2485205510\", \"description\": \"\", \"long_description\": \"\", \"id\": 2485205510, \"name\": \"\"}, \"background_color\": \"FFFFFF\", \"id\": 3812465186, \"category\": \"conferences,conventions\", \"box_header_background_color\": \"EFEFEF\", \"capacity\": 0, \"num_attendee_rows\": 0, \"title\": \"\", \"confirmation_page\": \"\", \"start_date\": \"2012-08-24 08:00:00\", \"status\": \"Live\", \"description\": \"<P STYLE=\\\"text-align: justify;\\\"><FONT SIZE=\\\"3\\\">Alinhado ao crescimento e estilo inovador da Associa\\u00e7\\u00e3o, surge o primeiro evento com marca pr\\u00f3pria a</FONT><STRONG STYLE=\\\"font-size: medium;\\\">\\u00a0</STRONG><FONT SIZE=\\\"3\\\"><STRONG>1\\u00aa Confer\\u00eancia de Empreendedorismos e Inova\\u00e7\\u00e3o - Campinas Startups</STRONG>, com o tema: Gerando oportunidades atrav\\u00e9s dos modelos de inova\\u00e7\\u00e3o das </FONT><EM STYLE=\\\"font-size: medium;\\\">startups</EM><FONT SIZE=\\\"3\\\">.</FONT></P>\", \"end_date\": \"2012-08-24 20:00:00\", \"tags\": \"1\\u00aa Confer\\u00eancia de Empreendedorismos e Inova\\u00e7\\u00e3o - Campinas Startups\", \"timezone_offset\": \"GMT-0300\", \"text_color\": \"005580\", \"title_text_color\": \"\", \"tickets\": [{\"ticket\": {\"description\": \"\", \"end_date\": \"2012-08-23 10:00:00\", \"min\": 1, \"max\": 30, \"price\": \"104.09\", \"visible\": \"true\", \"start_date\": \"2012-06-01 08:00:00\", \"currency\": \"BRL\", \"type\": 0, \"id\": 14362722, \"name\": \"Startups\"}}, {\"ticket\": {\"description\": \"\", \"end_date\": \"2012-08-23 10:00:00\", \"min\": 1, \"max\": 30, \"price\": \"206.59\", \"visible\": \"true\", \"start_date\": \"2012-06-01 08:00:00\", \"currency\": \"BRL\", \"type\": 0, \"id\": 14362296, \"name\": \"Empres\\u00e1rios\"}}], \"created\": \"2012-06-25 18:23:15\", \"url\": \"http://conferenciacampinastartups.eventbrite.com\", \"box_text_color\": \"000000\", \"privacy\": \"Public\", \"modified\": \"2012-07-06 07:05:46\", \"repeats\": \"no\"}}";
+
+        private const string get_event_with_display = "{\"event\": {\"box_header_text_color\": \"005580\", \"link_color\": \"EE6600\", \"box_background_color\": \"FFFFFF\", \"box_border_color\": \"D5D5D3\", \"timezone\": \"America/Sao_Paulo\", \"organizer\": {\"url\": \"http://www.eventbrite.com/org/2485205510\", \"description\": \"\", \"long_description\": \"\", \"id\": 2485205510, \"name\": \"\"}, \"background_color\": \"FFFFFF\", \"id\": 3812465186, \"category\": \"conferences,conventions\", \"box_header_background_color\": \"EFEFEF\", \"capacity\": 0, \"num_attendee_rows\": 0, \"title\": \"\", \"confirmation_page\": \"\", \"start_date\": \"2012-08-24 08:00:00\", \"status\": \"Live\", \"description\": \"<P STYLE=\\\"text-align: justify;\\\"><FONT SIZE=\\\"3\\\">Alinhado ao crescimento e estilo inovador da Associa\\u00e7\\u00e3o, surge o primeiro evento com marca pr\\u00f3pria a</FONT><STRONG STYLE=\\\"font-size: medium;\\\">\\u00a0</STRONG><FONT SIZE=\\\"3\\\"><STRONG>1\\u00aa Confer\\u00eancia de Empreendedorismos e Inova\\u00e7\\u00e3o - Campinas Startups</STRONG>, com o tema: Gerando oportunidades atrav\\u00e9s dos modelos de inova\\u00e7\\u00e3o das </FONT><EM STYLE=\\\"font-size: medium;\\\">startups</EM><FONT SIZE=\\\"3\\\">.</FONT></P>\", \"end_date\": \"2012-08-24 20:00:00\", \"tags\": \"1\\u00aa Confer\\u00eancia de Empreendedorismos e Inova\\u00e7\\u00e3o - Campinas Startups\", \"timezone_offset\": \"GMT-0300\", \"text_color\": \"005580\", \"title_text_color\": \"\", \"tickets\": [{\"ticket\": {\"description\": \"\", \"end_date\": \"2012-08-23 10:00:00\", \"min\": 1, \"max\": 30, \"price\": \"104.09\", \"visible\": \"true\", \"start_date\": \"2012-06-01 08:00:00\", \"currency\": \"BRL\", \"type\": 0, \"id\": 14362722, \"name\": \"Startups\"}}, {\"ticket\": {\"description\": \"\", \"end_date\": \"2012-08-23 10:00:00\", \"min\": 1, \"max\": 30, \"price\": \"206.59\", \"visible\": \"true\", \"start_date\": \"2012-06-01 08:00:00\", \"currency\": \"BRL\", \"type\": 0, \"id\": 14362296, \"name\": \"Empres\\u00e1rios\"}}], \"confirmation_email\": \"\", \"created\": \"2012-06-25 18:23:15\", \"url\": \"http://conferenciacampinastartups.eventbrite.com\", \"box_text_color\": \"000000\", \"privacy\": \"Public\", \"modified\": \"2012-07-06 07:05:46\", \"repeats\": \"no\"}}";
+
 
         [Test]
         public void create_task_asana_client()
@@ -49,11 +55,49 @@
                 {
                     Page = 20,
                     Keywords = "startup",
+                    SortBy = EventSortBy.date,
                 });
 
             AssertHelper.AssertEventsSearchResultValid(events);
             PAssert.IsTrue(() => events.Summary.Filter.Page == 20);
             PAssert.IsTrue(() => events.Summary.Filter.Keywords == "startup");
+        }
+
+        [TestCase(get_event)]
+        [TestCase(null, Category = TestCategories.Integration)]
+        public void success_get_event(string responseContent)
+        {
+            var client = GetAsanaClient<EventbriteClient.EventEventbriteClient>(responseContent);
+
+            var @event = client.GetEvent(new GetEventFilter
+                {
+                    Id = 3812465186,
+                });
+
+            PAssert.IsTrue(() => @event != null);
+            PAssert.IsTrue(() => @event.Id == 3812465186);
+        }
+        
+        [TestCase(get_event_with_display)]
+        [TestCase(null, Category = TestCategories.Integration)]
+        public void success_get_event_with_display(string responseContent)
+        {
+            var client = GetAsanaClient<EventbriteClient.EventEventbriteClient>(responseContent);
+
+            var @event = client.GetEvent(new GetEventFilter
+                {
+                    Id = 3812465186,
+                    EventDisplayFields = new List<GetEventDisplayFields>
+                        {
+                            GetEventDisplayFields.confirmation_page,
+                            GetEventDisplayFields.confirmation_email,
+                        },
+                });
+
+            PAssert.IsTrue(() => @event != null);
+            PAssert.IsTrue(() => @event.Id == 3812465186);
+            PAssert.IsTrue(() => @event.ConfirmationEmail != null);
+            PAssert.IsTrue(() => @event.ConfirmationPage != null);
         }
     }
 }

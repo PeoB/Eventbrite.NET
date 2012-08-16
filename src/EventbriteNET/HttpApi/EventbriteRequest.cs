@@ -59,7 +59,6 @@ namespace EventbriteNET.HttpApi
 
             request.DateFormat = _options.DateFormat ?? "yyyy-MM-dd HH:mm:ss";
             request.Resource = resource;
-            request.RootElement = _options.RootElement ?? string.Empty;
             request.RequestFormat = DataFormat.Json;
 
             return request;
