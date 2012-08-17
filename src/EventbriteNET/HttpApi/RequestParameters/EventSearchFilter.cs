@@ -2,10 +2,12 @@
 {
     using System.Collections.Generic;
     using Exceptions;
+    using Json.Converters;
     using Lokad;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
     using Resources;
+    using Utils;
 
     public class EventSearchFilter : FilterBase
     {
@@ -29,6 +31,10 @@
         public EventSortBy SortBy { get; set; }
         public string TrackingLink { get; set; }
 
+        [JsonProperty("create_date")]
+        [JsonConverter(typeof(RangeDateConverter))]
+        public RangeDate DateCreated { get; set; }
+
         private void InitMap()
         {
             Map.Add("keywords", GetPair(() => Keywords,
@@ -43,6 +49,8 @@
                                        value => SortBy = EnumUtil.Parse<EventSortBy>(value.ToString())));
             Map.Add("tracking_link", GetPair(() => TrackingLink,
                                              value => TrackingLink = value.ToString()));
+            Map.Add("date_created", GetPair(() => DateCreated.With(_ => _.ToString()),
+                                             value => DateCreated = RangeDate.Parse(value.ToString())));
         }
 
         public override void Validate()

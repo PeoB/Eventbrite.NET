@@ -59,6 +59,10 @@
     <Compile Include="HttpApi\RequestParameters\GetEventFilter.cs" />
     <Compile Include="HttpApi\RequestParameters\EventSearchFilter.cs" />
     <Compile Include="HttpApi\RequestParameters\FilterBase.cs" />
+    <Compile Include="HttpApi\RequestParameters\PredefinedBase.cs" />
+    <Compile Include="HttpApi\RequestParameters\RangeDate.cs" />
+    <Compile Include="HttpApi\RequestParameters\RangeDatePredefined.cs" />
+    <Compile Include="Json\Converters\RangeDateConverter.cs" />
     <Compile Include="Json\Converters\InnerListConverter.cs" />
     <Compile Include="Json\Converters\IOuterConverter.cs" />
     <Compile Include="Json\Converters\UriConverter.cs" />
@@ -84,10 +88,12 @@
     </Compile>
     <Compile Include="Utils\EnumUtil.cs" />
     <Compile Include="Utils\EnumUtil.TEnum.cs" />
+    <Compile Include="Utils\FluentExtensions.cs" />
     <Compile Include="Utils\OAuth2EventbriteAuthenticator.cs" />
     <Compile Include="Utils\EventbriteConfig.cs" />
     <Compile Include="Utils\EventbriteConfigManager.cs" />
     <Compile Include="Utils\Guard.cs" />
+    <Compile Include="Utils\SystemUtil.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\Utils\" />
