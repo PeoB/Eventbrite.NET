@@ -3,10 +3,10 @@
     using System.Collections.Generic;
     using Exceptions;
     using Json.Converters;
-    using Lokad;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
     using Resources;
+    using Types;
     using Utils;
 
     public class EventSearchFilter : FilterBase
@@ -32,8 +32,12 @@
         public string TrackingLink { get; set; }
 
         [JsonProperty("create_date")]
-        [JsonConverter(typeof(RangeDateConverter))]
-        public RangeDate DateCreated { get; set; }
+        [JsonConverter(typeof(DateRangeConverter))]
+        public DateRange<DateRangePredefined> Created { get; set; }
+        
+        [JsonProperty("date")]
+        [JsonConverter(typeof(DateRangeConverter2))]
+        public DateRange<DateRangePredefined2> StartDate { get; set; }
 
         private void InitMap()
         {
@@ -49,8 +53,10 @@
                                        value => SortBy = EnumUtil.Parse<EventSortBy>(value.ToString())));
             Map.Add("tracking_link", GetPair(() => TrackingLink,
                                              value => TrackingLink = value.ToString()));
-            Map.Add("date_created", GetPair(() => DateCreated.With(_ => _.ToString()),
-                                             value => DateCreated = RangeDate.Parse(value.ToString())));
+            Map.Add("date_created", GetPair(() => Created.With(_ => _.ToString()),
+                                             value => Created = DateRange<DateRangePredefined>.Parse(value.ToString())));
+            Map.Add("date", GetPair(() => StartDate.With(_ => _.ToString()),
+                                             value => StartDate = DateRange<DateRangePredefined2>.Parse(value.ToString())));
         }
 
         public override void Validate()

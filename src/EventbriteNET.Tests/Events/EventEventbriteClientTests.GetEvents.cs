@@ -2,6 +2,7 @@
 {
     using System;
     using HttpApi.RequestParameters;
+    using HttpApi.RequestParameters.Types;
     using NAsana.API.Tests.Mocks;
     using NUnit.Framework;
     using PowerAssert;
@@ -73,12 +74,12 @@
             var client = GetAsanaClient<EventbriteClient.EventEventbriteClient>(responseContent);
 
             var currentDate = responseContent == null ? SystemUtil.Now : new DateTime(2012, 8, 17);
-            var dateCreated = new RangeDate(currentDate.AddDays(-2), currentDate.AddDays(2));
+            var dateCreated = new DateRange<DateRangePredefined>(currentDate.AddDays(-2), currentDate.AddDays(2));
 
             var events = client.EventSearch(new EventSearchFilter
                 {
                     SortBy = EventSortBy.date,
-                    DateCreated = dateCreated,
+                    Created = dateCreated,
                     Max = 2,
                 });
 
@@ -92,12 +93,12 @@
         {
             var client = GetAsanaClient<EventbriteClient.EventEventbriteClient>(responseContent);
 
-            var dateCreated = new RangeDate(RangeDatePredefined.Yesterday);
+            var dateCreated = new DateRange<DateRangePredefined>(DateRangePredefined.Yesterday);
 
             var events = client.EventSearch(new EventSearchFilter
                 {
                     SortBy = EventSortBy.date,
-                    DateCreated = dateCreated,
+                    Created = dateCreated,
                     Max = 2,
                 });
 

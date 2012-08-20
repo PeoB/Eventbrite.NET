@@ -6,11 +6,9 @@
 
 #endregion
 
-using System;
-
-
-namespace Lokad
+namespace EventbriteNET.Utils
 {
+    using System;
     using System.Collections.Generic;
 
     /// <summary>

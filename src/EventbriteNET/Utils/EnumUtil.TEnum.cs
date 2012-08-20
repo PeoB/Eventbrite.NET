@@ -6,13 +6,13 @@
 
 #endregion
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace Lokad
+namespace EventbriteNET.Utils
 {
-	/// <summary>
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    /// <summary>
 	/// Strongly-typed enumeration util
 	/// </summary>
 	/// <typeparam name="TEnum">The type of the enum.</typeparam>

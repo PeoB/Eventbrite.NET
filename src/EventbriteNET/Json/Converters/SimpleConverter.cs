@@ -1,22 +1,23 @@
-﻿namespace EventbriteNET.Json.Converters
+namespace EventbriteNET.Json.Converters
 {
     using System;
-    using HttpApi.RequestParameters;
     using Newtonsoft.Json;
 
-    public class RangeDateConverter : JsonConverter
+    public abstract class SimpleConverter<T> : JsonConverter where T : class
     {
         public override bool CanConvert(Type objectType)
         {
-            return objectType == typeof(RangeDate);
+            return objectType == typeof (T);
         }
+
+        public abstract T Parse(string value);
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue,
                                         JsonSerializer serializer)
         {
             if (reader.TokenType == JsonToken.String)
             {
-                return RangeDate.Parse(reader.Value.ToString());
+                return Parse(reader.Value.ToString());
             }
 
             if (reader.TokenType == JsonToken.Null)
@@ -35,10 +36,10 @@
                 return;
             }
 
-            var uri = value as RangeDate;
-            if (uri != null)
+            var dateRange = value as T;
+            if (dateRange != null)
             {
-                writer.WriteValue(uri.ToString());
+                writer.WriteValue(dateRange.ToString());
                 return;
             }
 

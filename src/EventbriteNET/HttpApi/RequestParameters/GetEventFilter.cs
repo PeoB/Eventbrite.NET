@@ -1,7 +1,7 @@
 ﻿namespace EventbriteNET.HttpApi.RequestParameters
 {
     using System.Collections.Generic;
-    using Lokad;
+    using Utils;
 
     public class GetEventFilter : FilterBase
     {

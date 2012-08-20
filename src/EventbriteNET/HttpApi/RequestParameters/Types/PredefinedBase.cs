@@ -1,12 +1,16 @@
-namespace EventbriteNET.HttpApi.RequestParameters
+namespace EventbriteNET.HttpApi.RequestParameters.Types
 {
     using System.Collections.Generic;
     using System.Linq;
 
-    public abstract class PredefinedBase<T> where T : PredefinedBase<T>
+    public abstract class PredefinedBase
     {
         protected readonly string Value;
         protected readonly string UpperCaseValue;
+
+        internal PredefinedBase()
+        {
+        }
 
         protected PredefinedBase(string value)
         {
@@ -14,14 +18,25 @@ namespace EventbriteNET.HttpApi.RequestParameters
             UpperCaseValue = value.ToUpperInvariant();
         }
 
-        public abstract IEnumerable<T> GetValues();
-
-        public abstract T Create(string value);
-
         public override string ToString()
         {
             return Value;
         }
+    }
+
+    public abstract class PredefinedBase<T> : PredefinedBase where T : PredefinedBase<T>
+    {
+        internal PredefinedBase()
+        {
+        }
+
+        protected PredefinedBase(string value) : base(value)
+        {
+        }
+
+        public abstract IEnumerable<T> GetValues();
+
+        public abstract T Create(string value);
 
         public bool TryParseImpl(string s, out T value)
         {
